@@ -1,0 +1,126 @@
+/* Color Palette */
+$primary-blue: #007BFF;
+$secondary-teal: #00C4B4;
+$gradient-start: #007BFF;
+$gradient-end: #00C4B4;
+$light-bg: #F7FAFC;
+$white: #fff;
+$gray-text: #666;
+
+/* Container */
+.funds-container {
+  background: $white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  font-family: 'Poppins', sans-serif;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header-section {
+  text-align: center;
+
+  .title {
+    font-weight: 700;
+    font-size: 1.8rem;
+    background: linear-gradient(90deg, $gradient-start, $gradient-end);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 5px;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    color: $gray-text;
+  }
+}
+
+/* Form Card */
+.form-card {
+  background: $white;
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+  }
+
+  .form-group {
+    label {
+      font-weight: 500;
+      color: $primary-blue;
+      font-size: 0.95rem;
+      margin-bottom: 5px;
+    }
+
+    .form-control {
+      border-radius: 10px;
+      border: 1px solid $primary-blue;
+      padding: 10px;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+
+      &:focus {
+        border-color: $secondary-teal;
+        box-shadow: 0 0 10px rgba($primary-blue, 0.3);
+      }
+    }
+
+    .input-group-text {
+      background: linear-gradient(90deg, $gradient-start, $gradient-end);
+      color: $white;
+      border: none;
+      border-radius: 10px 0 0 10px;
+    }
+
+    small {
+      font-size: 0.85rem;
+      color: $gray-text;
+    }
+  }
+
+  .btn-gradient {
+    background: linear-gradient(90deg, $gradient-start, $gradient-end);
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $white;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+
+    &:hover:not(:disabled) {
+      background: linear-gradient(90deg, $gradient-end, $gradient-start);
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  .success-message {
+    p {
+      font-size: 0.95rem;
+      color: $secondary-teal;
+      font-weight: 500;
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .funds-container {
+    padding: 15px;
+  }
+
+  .form-card {
+    padding: 15px;
+  }
+}

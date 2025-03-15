@@ -1,0 +1,247 @@
+/* Custom Styling for Profile Component */
+body {
+    background-color: #f4f7fa;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Cover Image */
+  .cover-image {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+  
+  .cover-content {
+    z-index: 2;
+  }
+  
+  .cover-content h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .btn-edit-cover {
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn-edit-cover:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+  }
+  
+  /* Profile Card */
+  .profile-card {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .profile-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  /* Profile Picture */
+  .profile-pic-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 100px;
+
+  }
+  
+  .profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .profile-pic:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .profile-pic-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .profile-pic-container:hover .profile-pic-overlay {
+    opacity: 1;
+  }
+  
+  .btn-upload {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn-upload:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+  }
+  
+  /* Card Styling */
+  .card {
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Navigation Tabs */
+  .nav-pills .nav-link {
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .nav-pills .nav-link.active {
+    background-color: #007bff;
+    color: #fff;
+    transform: scale(1.05);
+  }
+  
+  .nav-pills .nav-link:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.05);
+  }
+  
+  /* List Group */
+  .list-group-item {
+    padding: 10px 0;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .list-group-item:hover {
+    background-color: #f8f9fa;
+    transform: translateX(5px);
+  }
+  
+  .text-dark {
+    color: #333 !important;
+    font-weight: 600;
+  }
+  
+  .text-sm {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  /* Editable Inputs */
+  .form-control {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+    outline: none;
+  }
+  
+  textarea.form-control {
+    resize: none;
+    height: 60px;
+  }
+  
+  /* Edit Buttons */
+  .btn-edit {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn-edit:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+  }
+  
+  /* Save Button */
+  .btn-primary {
+    border-radius: 8px;
+    padding: 8px 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .cover-image {
+      height: 200px;
+    }
+  
+    .cover-content h3 {
+      font-size: 1.5rem;
+    }
+  
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .nav-pills {
+      flex-direction: column;
+    }
+  
+    .nav-item {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }

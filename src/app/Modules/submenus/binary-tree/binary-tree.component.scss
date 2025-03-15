@@ -1,0 +1,171 @@
+/* Color Palette */
+$primary-blue: #007BFF;
+$secondary-teal: #00C4B4;
+$gradient-start: #007BFF;
+$gradient-end: #00C4B4;
+$light-bg: #F7FAFC;
+$white: #fff;
+$gray-text: #666;
+
+/* Container */
+.binary-tree-container {
+  background: $white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  font-family: 'Poppins', sans-serif;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+
+  /* Gradient Border Effect */
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, $gradient-start, $gradient-end);
+    z-index: -1;
+    border-radius: 17px;
+    filter: blur(5px);
+  }
+}
+
+/* Header */
+.header-section {
+  .title {
+    font-weight: 700;
+    font-size: 1.8rem;
+    background: #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 5px;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    color: $gray-text;
+  }
+}
+
+/* Tree Wrapper */
+.tree-wrapper {
+  position: relative;
+  min-height: 500px;
+  padding-top: 20px;
+}
+
+/* Tree Levels */
+.tree-level {
+  margin-bottom: 50px;
+
+  &.level-0 {
+    text-align: center;
+  }
+
+  &.level-1 {
+    .node {
+      width: 45%;
+    }
+  }
+
+  &.level-2 {
+    .node {
+      width: 22%;
+    }
+  }
+}
+
+/* Node */
+.node {
+  background: $white;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+  &:hover {
+    border: 2px solid $primary-blue;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba($primary-blue, 0.2);
+    background: linear-gradient(135deg, rgba($gradient-start, 0.1), rgba($gradient-end, 0.1));
+
+    .profile-pic {
+      border-color: $secondary-teal;
+    }
+
+    .full-name {
+      color: $primary-blue;
+    }
+  }
+
+  .node-content {
+    .profile-pic {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 3px solid $primary-blue;
+      margin-bottom: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .full-name {
+      font-weight: 600;
+      font-size: 1rem;
+      color: $gray-text;
+      display: block;
+      transition: all 0.3s ease;
+    }
+  }
+
+  .node-info {
+    font-size: 0.85rem;
+    color: $gray-text;
+    margin-top: 10px;
+
+    p {
+      margin: 2px 0;
+    }
+  }
+}
+
+/* Tree Lines */
+.tree-lines {
+  .line {
+    stroke: $primary-blue;
+    stroke-width: 2;
+    stroke-dasharray: 5;
+    animation: drawLine 2s infinite linear;
+  }
+}
+
+@keyframes drawLine {
+  0% { stroke-dashoffset: 10; }
+  100% { stroke-dashoffset: 0; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tree-level {
+    &.level-1, &.level-2 {
+      flex-direction: column;
+      align-items: center;
+
+      .node {
+        width: 80%;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .tree-lines {
+    display: none; /* Hide lines on mobile for clarity */
+  }
+}

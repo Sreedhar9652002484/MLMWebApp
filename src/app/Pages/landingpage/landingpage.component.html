@@ -1,0 +1,134 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(90deg, #ff6b6b, #feca57);">
+    <div class="container">
+      <a class="navbar-brand logo" href="#">
+        <span class="logo-text animate__animated animate__pulse animate__infinite">GRMarketing</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#plans">Plans</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-light text-dark ms-2" routerLink="/register">Register</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Hero Section -->
+  <section class="hero-section text-center text-white d-flex align-items-center" style="background: linear-gradient(135deg, #4ecdc4, #556270); min-height: 100vh;">
+    <div class="container">
+      <h1 class="display-3 animate__animated animate__fadeInDown">Welcome to GRMarketing</h1>
+      <p class="lead animate__animated animate__fadeInUp">Unleash the Power of Multi-Level Marketing and Achieve Financial Freedom!</p>
+      <div class="mt-4">
+        <a href="#plans" class="btn btn-light btn-lg mx-2 animate__animated animate__pulse animate__infinite">Explore Plans</a>
+        <a routerLink="/register" class="btn btn-outline-light btn-lg mx-2 animate__animated animate__pulse animate__infinite">Get Started</a>
+      </div>
+      <div class="mt-5">
+        <div class="hero-animation animate__animated animate__zoomIn">
+          <span class="bi bi-rocket-takeoff display-1"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Features Section -->
+  <section class="py-5" style="background: linear-gradient(135deg, #ff9f43, #ee5253);">
+    <div class="container">
+      <h2 class="text-center text-white mb-5 animate__animated animate__fadeIn">Why Choose GRMarketing?</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 text-center text-white animate__animated animate__fadeInUp" style="background: rgba(255, 255, 255, 0.1);">
+            <div class="card-body">
+              <i class="bi bi-rocket-takeoff display-4 mb-3 animate__animated animate__bounce animate__infinite"></i>
+              <h5 class="card-title">Fast Growth</h5>
+              <p class="card-text">Build your network quickly with our proven MLM strategies.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 text-center text-white animate__animated animate__fadeInUp" style="background: rgba(255, 255, 255, 0.1);">
+            <div class="card-body">
+              <i class="bi bi-cash-stack display-4 mb-3 animate__animated animate__bounce animate__infinite"></i>
+              <h5 class="card-title">High Earnings</h5>
+              <p class="card-text">Earn lucrative commissions from your downlines.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 text-center text-white animate__animated animate__fadeInUp" style="background: rgba(255, 255, 255, 0.1);">
+            <div class="card-body">
+              <i class="bi bi-people display-4 mb-3 animate__animated animate__bounce animate__infinite"></i>
+              <h5 class="card-title">Community Support</h5>
+              <p class="card-text">Join a thriving community of marketers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Subscription Plans Section -->
+  <!-- <section id="plans" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5 animate__animated animate__fadeIn">Choose Your Plan</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4" *ngFor="let plan of plans">
+          <div class="card h-100 animate__animated animate__fadeInUp" style="border: 2px solid #ff6b6b;">
+            <div class="card-body text-center">
+              <h3 class="card-title" style="color: #ff6b6b;">{{ plan.name }}</h3>
+              <p class="card-text text-muted">{{ plan.description }}</p>
+              <h4 class="card-title" style="color: #feca57;">{{ plan.price }}/month</h4>
+              <ul class="list-unstyled">
+                <li *ngFor="let feature of plan.features" class="animate__animated animate__fadeIn">{{ feature }}</li>
+              </ul>
+              <button class="btn btn-primary mt-3 animate__animated animate__pulse animate__infinite" (click)="subscribe(plan)">Subscribe Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  
+  <!-- Creative Content Section -->
+  <section class="py-5 text-center" style="background: linear-gradient(135deg, #54a0ff, #1dd1a1);">
+    <div class="container">
+      <h2 class="text-white mb-4 animate__animated animate__fadeIn">Your Journey to Success Starts Here</h2>
+      <p class="lead text-white animate__animated animate__fadeInUp">Imagine a future where your income grows exponentially, your network thrives, and your dreams become reality. With GRMarketing, you're not just joining a platform—you're joining a movement.</p>
+      <div class="mt-5">
+        <div class="creative-animation animate__animated animate__zoomIn">
+          <span class="bi bi-star-fill display-1 text-warning"></span>
+          <span class="bi bi-star-fill display-1 text-warning mx-3"></span>
+          <span class="bi bi-star-fill display-1 text-warning"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Call to Action Section -->
+  <section class="py-5 text-center text-white" style="background: linear-gradient(135deg, #1dd1a1, #54a0ff);">
+    <div class="container">
+      <h2 class="mb-4 animate__animated animate__fadeIn">Ready to Transform Your Future?</h2>
+      <p class="lead animate__animated animate__fadeInUp">Join GRMarketing today and start building your empire!</p>
+      <a routerLink="/register" class="btn btn-light btn-lg animate__animated animate__pulse animate__infinite">Get Started Now</a>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="py-4 text-white" style="background: linear-gradient(90deg, #ff6b6b, #feca57);">
+    <div class="container text-center">
+      <p>© 2023 GRMarketing. All Rights Reserved.</p>
+      <p>Follow us on <a href="#" class="text-white">Facebook</a> | <a href="#" class="text-white">Twitter</a> | <a href="#" class="text-white">Instagram</a></p>
+    </div>
+  </footer>

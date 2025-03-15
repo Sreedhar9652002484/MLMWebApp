@@ -1,0 +1,283 @@
+// Import Google Fonts for a modern look
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+// // Base Styles
+// * {
+//   box-sizing: border-box;
+// }
+
+// body {
+//   background-color: #f6f5f7;
+//   font-family: 'Poppins', sans-serif;
+//   margin-bottom: 50px;
+// }
+
+// .pricing-page {
+//   padding: 50px 0;
+//   background: linear-gradient(135deg, #f6f5f7, #e9ecef);
+// }
+
+.text-center {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+h1:hover {
+  transform: scale(1.05);
+}
+
+// Pricing Box Container
+.pricing-box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+// Pricing Box
+.pricing-box {
+  background-color: #ffffff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  flex: 1;
+  padding: 30px;
+  margin: 2%;
+  min-width: 250px;
+  max-width: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  &.recommended {
+    border: 2px solid #007bff;
+    transform: scale(1.05);
+    z-index: 1;
+
+    &:hover {
+      transform: scale(1.07);
+    }
+  }
+
+  h5.plan-name {
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+
+    i {
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      color: #007bff;
+
+      i {
+        transform: rotate(20deg);
+      }
+    }
+  }
+
+  .price {
+    margin: 24px 0;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #333;
+    transition: color 0.3s ease;
+
+    sup,
+    sub {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #666;
+    }
+
+    &:hover {
+      color: #007bff;
+    }
+  }
+
+  .features-list {
+    padding: 0;
+    list-style-type: none;
+    margin-bottom: 20px;
+
+    li {
+      font-weight: 400;
+      padding: 12px 0;
+      font-size: 0.9rem;
+      color: #666;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        background-color: #f8f9fa;
+        transform: translateX(5px);
+      }
+
+      i {
+        color: #007bff;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover i {
+        transform: scale(1.2);
+      }
+
+      &:not(:last-of-type) {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  .btn-primary {
+    border-radius: 25px;
+    border: none;
+    background-color: #007bff;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+      transform: translateY(-3px);
+
+      i {
+        transform: translateX(5px);
+      }
+    }
+
+    &.btn-subscribed {
+      background-color: #28a745;
+      cursor: default;
+
+      &:hover {
+        transform: none;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+// Recommended Badge
+.recommended-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 0 0 0 15px;
+  transform: rotate(45deg);
+  transform-origin: top right;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+// Background Image for Recommended Plan
+.pricing-box-bg-image {
+  background-image: url('https://images.unsplash.com/photo-1550029402-226115b7c579?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80');
+  background-size: cover;
+  background-position: center center;
+  color: #ffffff;
+
+  h5.plan-name,
+  .price {
+    color: #ffffff;
+  }
+
+  .features-list li {
+    border-bottom-color: rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+
+    i {
+      color: #ffffff;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .btn-primary {
+    background-color: #ffffff;
+    color: #007bff;
+
+    &:hover {
+      background-color: #f1f1f1;
+    }
+
+    &.btn-subscribed {
+      background-color: #28a745;
+      color: #ffffff;
+    }
+  }
+}
+
+// Footer
+footer {
+  background-color: #222;
+  color: #fff;
+  font-size: 14px;
+  bottom: 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 10px 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+  margin: 0;
+}
+
+footer i {
+  color: red;
+}
+
+footer a {
+  color: #3c97bf;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #007bff;
+  }
+}
+
+// Responsive Adjustments
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .pricing-box {
+    min-width: 100%;
+    margin: 10px 0;
+  }
+}

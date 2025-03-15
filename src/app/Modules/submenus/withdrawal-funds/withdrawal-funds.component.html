@@ -1,0 +1,47 @@
+<div class="funds-container animate__animated animate__fadeIn">
+    <div class="header-section mb-4">
+      <h2 class="title">Withdraw Funds</h2>
+      <p class="subtitle">Request a withdrawal from your GRMarketing wallet</p>
+    </div>
+  
+    <div class="form-card shadow-sm">
+      <form (ngSubmit)="onWithdraw()" #withdrawForm="ngForm">
+        <!-- Amount -->
+        <div class="form-group mb-4">
+          <label for="amount">Amount (INR)</label>
+          <div class="input-group">
+            <span class="input-group-text">₹</span>
+            <input type="number" class="form-control" id="amount" [(ngModel)]="withdrawal.amount" name="amount" 
+                   placeholder="Enter amount" min="500" step="100" max="{{ availableBalance }}" required>
+          </div>
+          <small class="text-muted">Available Balance: ₹{{ availableBalance.toFixed(2) }}</small>
+        </div>
+  
+        <!-- Withdrawal Method -->
+        <div class="form-group mb-4">
+          <label for="withdrawalMethod">Withdrawal Method</label>
+          <select class="form-control" id="withdrawalMethod" [(ngModel)]="withdrawal.withdrawalMethod" name="withdrawalMethod" required>
+            <option value="" disabled selected>Select withdrawal method</option>
+            <option value="Bank Transfer">Bank Transfer</option>
+            <option value="UPI">UPI</option>
+            <option value="Crypto">Cryptocurrency</option>
+          </select>
+        </div>
+  
+        <!-- Account Details -->
+        <div class="form-group mb-4">
+          <label for="accountDetails">Account Details</label>
+          <input type="text" class="form-control" id="accountDetails" [(ngModel)]="withdrawal.accountDetails" name="accountDetails" 
+                 placeholder="e.g., UPI ID, Bank Account No." required>
+        </div>
+  
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-gradient w-100" [disabled]="!withdrawForm.valid || withdrawal.amount > availableBalance">Withdraw Now</button>
+      </form>
+  
+      <!-- Success Message -->
+      <div class="success-message mt-3 text-center" *ngIf="withdrawSuccess">
+        <p class="animate__animated animate__bounceIn">Withdrawal request submitted successfully!</p>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,56 @@
+<div class="container-fluid pricing-page animate__animated animate__fadeIn">
+    <h1 class="text-center mb-5 animate__animated animate__fadeInDown">Pick the Best MLM Plan for You</h1>
+  
+    <div class="pricing-box-container">
+      <div
+        *ngFor="let plan of plans; let i = index"
+        class="pricing-box text-center animate__animated animate__fadeInUp"
+        [ngClass]="{
+          'pricing-box-bg-image': i === 2,
+          'recommended': i === 2,
+          'animate__delay-1s': i % 2 === 0,
+          'animate__delay-2s': i % 2 !== 0
+        }"
+      >
+        <!-- Recommended Badge -->
+        <div class="recommended-badge" *ngIf="i === 2">
+          <span>Recommended</span>
+        </div>
+  
+        <!-- Plan Name -->
+        <h5 class="plan-name">
+          <i class="fas fa-gem me-2"></i>{{ plan.name }}
+        </h5>
+  
+        <!-- Plan Price -->
+        <p class="price">
+          <sup>$</sup>{{ plan.price }}<sub>/mo</sub>
+        </p>
+  
+        <!-- Features List -->
+        <ul class="features-list">
+          <li>
+            <i class="fas fa-project-diagram me-2"></i><strong>{{ plan.bv }}</strong> Business Volume (BV)
+          </li>
+          <li>
+            <i class="fas fa-users me-2"></i><strong>{{ plan.referralCommission }}</strong> Referral Commission
+          </li>
+          <li>
+            <i class="fas fa-sitemap me-2"></i><strong>{{ plan.treeCommission }}</strong> Tree Commission
+          </li>
+        </ul>
+  
+        <!-- Subscribe Button -->
+        <button
+          class="btn-primary"
+          [ngClass]="{ 'btn-subscribed': subscribedPlan === plan.id }"
+          (click)="subscribePlan(plan.id)"
+        >
+          <i class="fas fa-rocket me-2"></i>
+          {{ subscribedPlan === plan.id ? 'Subscribed' : 'Get Started' }}
+        </button>
+      </div>
+    </div>
+  
+  
+  </div>

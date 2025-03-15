@@ -1,0 +1,85 @@
+.login-container {
+    position: relative;
+    overflow: hidden;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+      z-index: 1;
+    }
+    .container {
+      position: relative;
+      z-index: 2;
+    }
+  }
+  
+  .creative-section {
+    border-radius: 15px 0 0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+    }
+    p {
+      font-size: 1.1rem;
+    }
+  }
+  
+  .login-form-section {
+    background: white;
+    border-radius: 0 15px 15px 0;
+    padding: 20px;
+  }
+  
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+  }
+  
+  .btn-primary {
+    background: linear-gradient(90deg, #ff6b6b, #feca57);
+    border: none;
+    &:hover {
+      background: linear-gradient(90deg, #feca57, #ff6b6b);
+    }
+  }
+  
+  .creative-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .login-form-section {
+      border-radius: 15px;
+      padding: 10px;
+    }
+    .creative-section {
+      display: none !important; // Hide creative section on mobile
+    }
+    .login-container {
+      background: white;
+      .card {
+        border: 2px solid #ff6b6b;
+      }
+    }
+  }

@@ -1,0 +1,47 @@
+<div class="funds-container animate__animated animate__fadeIn">
+    <div class="header-section mb-4">
+      <h2 class="title">Deposit Funds</h2>
+      <p class="subtitle">Add funds to your GRMarketing account securely</p>
+    </div>
+  
+    <div class="form-card shadow-sm">
+      <form (ngSubmit)="onDeposit()" #depositForm="ngForm">
+        <!-- Amount -->
+        <div class="form-group mb-4">
+          <label for="amount">Amount (INR)</label>
+          <div class="input-group">
+            <span class="input-group-text">₹</span>
+            <input type="number" class="form-control" id="amount" [(ngModel)]="deposit.amount" name="amount" 
+                   placeholder="Enter amount" min="100" step="100" required>
+          </div>
+        </div>
+  
+        <!-- Payment Method -->
+        <div class="form-group mb-4">
+          <label for="paymentMethod">Payment Method</label>
+          <select class="form-control" id="paymentMethod" [(ngModel)]="deposit.paymentMethod" name="paymentMethod" required>
+            <option value="" disabled selected>Select payment method</option>
+            <option value="UPI">UPI</option>
+            <option value="Bank Transfer">Bank Transfer</option>
+            <option value="Credit/Debit Card">Credit/Debit Card</option>
+            <option value="Crypto">Cryptocurrency</option>
+          </select>
+        </div>
+  
+        <!-- Description -->
+        <div class="form-group mb-4">
+          <label for="description">Description (Optional)</label>
+          <textarea class="form-control" id="description" [(ngModel)]="deposit.description" name="description" 
+                    placeholder="Add a note (e.g., Top-up for plan)" rows="3"></textarea>
+        </div>
+  
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-gradient w-100" [disabled]="!depositForm.valid">Deposit Now</button>
+      </form>
+  
+      <!-- Success Message -->
+      <div class="success-message mt-3 text-center" *ngIf="depositSuccess">
+        <p class="animate__animated animate__bounceIn">Deposit request submitted successfully!</p>
+      </div>
+    </div>
+  </div>

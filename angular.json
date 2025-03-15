@@ -30,9 +30,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": [],
+  "node_modules/bootstrap/dist/css/bootstrap.min.css",
+  "node_modules/animate.css/animate.min.css",
+  
+  "src/styles.scss"
+],
+"scripts": [
+  "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -102,5 +107,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "fd90aa52-9683-45e0-8236-7334ac0f8a7a"
   }
 }

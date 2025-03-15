@@ -1,0 +1,52 @@
+<div class="support-ticket-container animate__animated animate__fadeIn">
+    <div class="header-section mb-4 text-center">
+      <h2 class="title">Raise a Support Ticket</h2>
+      <p class="subtitle">We’re here to assist you! Submit your query below.</p>
+    </div>
+  
+    <div class="ticket-card shadow-sm">
+      <form (ngSubmit)="onSubmitTicket()" #ticketForm="ngForm">
+        <!-- Subject -->
+        <div class="form-group mb-4">
+          <label for="subject">Subject</label>
+          <input type="text" class="form-control" id="subject" [(ngModel)]="ticket.subject" name="subject" 
+                 placeholder="e.g., Payment Issue" required>
+        </div>
+  
+        <!-- Urgency -->
+        <div class="form-group mb-4">
+          <label for="urgency">Urgency Level</label>
+          <select class="form-control" id="urgency" [(ngModel)]="ticket.urgency" name="urgency" required>
+            <option value="" disabled selected>Select urgency</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+            <option value="Critical">Critical</option>
+          </select>
+        </div>
+  
+        <!-- Description -->
+        <div class="form-group mb-4">
+          <label for="description">Description</label>
+          <textarea class="form-control" id="description" [(ngModel)]="ticket.description" name="description" 
+                    placeholder="Describe your issue in detail..." rows="5" required></textarea>
+        </div>
+  
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-gradient w-100" [disabled]="!ticketForm.valid">Submit Ticket</button>
+      </form>
+  
+      <!-- Success Message -->
+      <div class="success-message mt-3 text-center" *ngIf="ticketSubmitted">
+        <p class="animate__animated animate__bounceIn">
+          Ticket submitted successfully! We’ll get back to you soon.
+        </p>
+        <div class="ticket-id mt-2">Ticket ID: {{ generatedTicketId }}</div>
+      </div>
+    </div>
+  
+    <!-- Support Icon Decoration -->
+    <div class="support-icon animate__animated animate__pulse animate__infinite">
+      <i class="bi bi-headset"></i>
+    </div>
+  </div>

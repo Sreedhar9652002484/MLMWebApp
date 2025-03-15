@@ -1,0 +1,129 @@
+<div class="area"></div>
+<nav class="main-menu animate__animated animate__slideInLeft" [ngClass]="{'expanded': sidebarOpen}">
+  <ul>
+    <!-- Logo -->
+  
+      <a class="navbar-brand logo-text d-flex align-items-center mx-5" href="#" (click)="navigateTo('dashboard'); $event.preventDefault()">
+        <img src="../../../../assets/images/logo.png" alt="Logo" class="logo-icon me-2" style=" height: 80px;" />
+        <!-- <span class="nav-text">
+          <span class="logo-gr">GR</span>  Marketing
+        </span> -->
+      </a>
+   
+    <!-- Navigation Items -->
+    <li>
+      <a href="#" (click)="navigateTo('dashboard'); $event.preventDefault()">
+        <i class="fa fa-tachometer-alt fa-2x"></i>
+        <span class="nav-text">Dashboard</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" (click)="navigateTo('plan'); $event.preventDefault()">
+        <i class="fa fa-rocket fa-2x"></i>
+        <span class="nav-text">Plan</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" (click)="navigateTo('profile'); $event.preventDefault()">
+        <i class="fa fa-user-circle fa-2x"></i>
+        <span class="nav-text">My Profile</span>
+      </a>
+    </li>
+    <li class="has-subnav">
+      <a href="#" (click)="navigateTo('team'); $event.preventDefault()">
+        <i class="fa fa-users fa-2x"></i>
+        <span class="nav-text">Team</span>
+        <!-- <i class="fa fa-chevron-down float-end" *ngIf="!submenus.team && sidebarOpen"></i>
+        <i class="fa fa-chevron-up float-end" *ngIf="submenus.team && sidebarOpen"></i> -->
+      </a>
+      <!-- <ul class="submenu" *ngIf="submenus.team && sidebarOpen">
+        <li><a href="#" (click)="navigateTo('direct-team'); $event.preventDefault()">Direct Team</a></li>
+        <li><a href="#" (click)="navigateTo('downline'); $event.preventDefault()">Downline</a></li>
+        <li><a href="#" (click)="navigateTo('tree'); $event.preventDefault()">Tree</a></li>
+      </ul> -->
+    </li>
+    <li class="has-subnav">
+      <a href="#" (click)="navigateTo('income'); $event.preventDefault()">
+        <i class="fa fa-money-bill-wave fa-2x"></i>
+        <span class="nav-text">Income</span>
+        <!-- <i class="fa fa-chevron-down float-end" *ngIf="!submenus.income && sidebarOpen"></i>
+        <i class="fa fa-chevron-up float-end" *ngIf="submenus.income && sidebarOpen"></i> -->
+      </a>
+      <!-- <ul class="submenu" *ngIf="submenus.income && sidebarOpen">
+        <li><a href="#" (click)="navigateTo('daily-income'); $event.preventDefault()">Daily Income</a></li>
+        <li><a href="#" (click)="navigateTo('direct-income'); $event.preventDefault()">Direct Income</a></li>
+        <li><a href="#" (click)="navigateTo('binary-income'); $event.preventDefault()">Binary Income</a></li>
+        <li><a href="#" (click)="navigateTo('credit-debit-history'); $event.preventDefault()">Credit/Debit History</a></li>
+      </ul> -->
+    </li>
+    <li class="has-subnav">
+      <a href="#" (click)="navigateTo('wallet'); $event.preventDefault()">
+        <i class="fa fa-wallet fa-2x"></i>
+        <span class="nav-text">Wallet</span>
+        <i class="fa fa-chevron-down float-end" *ngIf="!submenus.wallet && sidebarOpen"></i>
+        <i class="fa fa-chevron-up float-end" *ngIf="submenus.wallet && sidebarOpen"></i>
+      </a>
+      <ul class="submenu" *ngIf="submenus.wallet && sidebarOpen">
+        <li><a href="#" (click)="navigateTo('fund-request'); $event.preventDefault()">Fund Request</a></li>
+        <li><a href="#" (click)="navigateTo('fund-transfer'); $event.preventDefault()">Fund Transfer</a></li>
+        <li><a href="#" (click)="navigateTo('history'); $event.preventDefault()">History</a></li>
+      </ul>
+    </li>
+    <li class="has-subnav">
+      <a href="#" (click)="toggleSubmenu('topup'); $event.preventDefault()">
+        <i class="fa fa-arrow-up fa-2x"></i>
+        <span class="nav-text">TopUp</span>
+        <i class="fa fa-chevron-down float-end" *ngIf="!submenus.topup && sidebarOpen"></i>
+        <i class="fa fa-chevron-up float-end" *ngIf="submenus.topup && sidebarOpen"></i>
+      </a>
+      <ul class="submenu" *ngIf="submenus.topup && sidebarOpen">
+        <li><a href="#" (click)="navigateTo('id-topup'); $event.preventDefault()">ID Topup</a></li>
+        <li><a href="#" (click)="navigateTo('used-fund-history'); $event.preventDefault()">Used Fund History</a></li>
+        <li><a href="#" (click)="navigateTo('my-topup-history'); $event.preventDefault()">My Topup History</a></li>
+      </ul>
+    </li>
+  
+
+    <li>
+      <a href="#" (click)="navigateTo('deposit'); $event.preventDefault()">
+      <i class="fa fa-hand-holding-usd fa-2x"></i>
+      <span class="nav-text">Deposit Funds</span>
+      </a>
+    </li>
+
+      <li>
+        <a href="#" (click)="navigateTo('withdrawal'); $event.preventDefault()">
+        <i class="fa fa-hand-holding-usd fa-2x"></i>
+        <span class="nav-text">Withdrawal Funds</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#" (click)="navigateTo('support'); $event.preventDefault()">
+          <i class="fa fa-headset fa-2x"></i>
+                  <span class="nav-text">Support Tickets</span>
+        </a>
+      </li>
+
+      <!-- <a href="#" (click)="=navigateTo('withdrawal'); $event.preventDefault()">
+        <i class="fa fa-hand-holding-usd fa-2x"></i>
+        <span class="nav-text">Withdrawal</span>
+        <i class="fa fa-chevron-down float-end" *ngIf="!submenus.withdrawal && sidebarOpen"></i>
+        <i class="fa fa-chevron-up float-end" *ngIf="submenus.withdrawal && sidebarOpen"></i>
+      </a> -->
+      <!-- <ul class="submenu" *ngIf="submenus.withdrawal && sidebarOpen">
+        <li><a href="#" (click)="navigateTo('daily-cashback-income'); $event.preventDefault()">Daily Cashback Income</a></li>
+        <li><a href="#" (click)="navigateTo('working-income'); $event.preventDefault()">Working Income</a></li>
+        <li><a href="#" (click)="navigateTo('withdrawal-history'); $event.preventDefault()">Withdrawal History</a></li>
+      </ul> -->
+  
+  </ul>
+  <ul class="logout">
+    <li>
+      <a href="#" >
+        <i class="fa fa-power-off fa-2x"></i>
+        <span class="nav-text">Logout</span>
+      </a>
+    </li>
+  </ul>
+</nav>

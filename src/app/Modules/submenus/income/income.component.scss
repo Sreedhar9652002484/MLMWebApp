@@ -1,0 +1,191 @@
+/* Color Palette */
+$primary-blue: #007BFF;
+$secondary-teal: #00C4B4;
+$gradient-start: #007BFF;
+$gradient-end: #00C4B4;
+$light-bg: #F7FAFC;
+$white: #fff;
+$gray-text: #666;
+$pending-orange: #FFA726;
+$rejected-red: #EF5350;
+$submitted-green: #00C853;
+
+/* Container */
+.transaction-log-container {
+  background: $white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Header */
+.header-section {
+  .table-title {
+    font-weight: 700;
+    font-size: 1.8rem;
+    background: linear-gradient(90deg, $gradient-start, $gradient-end);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .controls {
+    gap: 15px;
+
+    .search-bar {
+      .form-control {
+        border-radius: 25px;
+        border: 1px solid $primary-blue;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+
+        &:focus {
+          box-shadow: 0 0 10px rgba($primary-blue, 0.3);
+          border-color: $secondary-teal;
+        }
+      }
+    }
+
+    .date-filter {
+      .form-control {
+        border-radius: 25px;
+        border: 1px solid $primary-blue;
+        padding: 10px;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+
+        &:focus {
+          box-shadow: 0 0 10px rgba($primary-blue, 0.3);
+          border-color: $secondary-teal;
+        }
+      }
+    }
+  }
+}
+
+/* Table Wrapper */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+/* Transaction Table */
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: $white;
+  border-radius: 10px;
+  overflow: hidden;
+
+  thead {
+    background: linear-gradient(90deg, $gradient-start, $gradient-end);
+    color: $white;
+
+    th {
+      padding: 15px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid rgba($gray-text, 0.1);
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: linear-gradient(135deg, rgba($gradient-start, 0.1), rgba($gradient-end, 0.1));
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      td {
+        padding: 15px;
+        font-size: 0.95rem;
+        color: $gray-text;
+
+        &.amount {
+          font-weight: 600;
+
+          &.credit {
+            color: $submitted-green;
+          }
+
+          &.debit {
+            color: $rejected-red;
+          }
+        }
+
+        .status-badge {
+          padding: 5px 10px;
+          border-radius: 20px;
+          font-size: 0.85rem;
+          font-weight: 500;
+
+          &.submitted {
+            background: $submitted-green;
+            color: $white;
+          }
+
+          &.pending {
+            background: $pending-orange;
+            color: $white;
+          }
+
+          &.rejected {
+            background: $rejected-red;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Pagination */
+.pagination {
+  .btn-gradient {
+    background: linear-gradient(90deg, $gradient-start, $gradient-end);
+    border: none;
+    padding: 8px 20px;
+    color: $white;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+
+    &:hover:not(:disabled) {
+      background: linear-gradient(90deg, $gradient-end, $gradient-start);
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  .page-info {
+    font-size: 0.9rem;
+    color: $primary-blue;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-section {
+    .controls {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  .transaction-table {
+    thead th,
+    tbody td {
+      font-size: 0.85rem;
+      padding: 10px;
+    }
+  }
+}

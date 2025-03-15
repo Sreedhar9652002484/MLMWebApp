@@ -1,0 +1,444 @@
+/* Navbar */
+.navbar {
+  background: #fff !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  padding: 10px 0;
+  height: 70px;
+  z-index: 1000;
+
+  .navbar-content {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .navbar-brand.logo-text {
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #333;
+    transition: all 0.3s ease;
+
+    .logo-icon {
+      border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .logo-gr {
+      color: #4B5EAA;
+      font-size: 1.9rem;
+    }
+
+    &:hover {
+      color: #38B2AC;
+      .logo-icon {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  .navbar-nav {
+    gap: 20px;
+
+    .nav-item {
+      .nav-link {
+        color: #333;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 1rem;
+        padding: 8px 12px;
+        transition: all 0.3s ease;
+
+        i {
+          font-size: 1.5rem;
+        }
+
+        .badge {
+          position: relative;
+          top: -10px;
+          right: -10px;
+          font-size: 0.7rem;
+        }
+
+        &:hover {
+          background: linear-gradient(90deg, #4B5EAA, #38B2AC);
+          color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      .dropdown-menu {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+        .dropdown-item {
+          font-size: 0.9rem;
+          padding: 6px 15px;
+          &:hover {
+            background: #F7FAFC;
+            color: #4B5EAA;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 70px;
+  height: calc(100vh - 70px);
+  background: #fff;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.05);
+  transition: width 0.3s ease;
+  z-index: 999;
+
+  &.expanded {
+    width: 250px;
+  }
+
+  .sidebar-content {
+    .sidebar-nav {
+      list-style: none;
+      padding: 0;
+
+      .nav-item {
+        .nav-link {
+          color: #333;
+          font-family: 'Poppins', sans-serif;
+          font-weight: 500;
+          font-size: 1rem;
+          padding: 12px 15px;
+          transition: all 0.3s ease;
+
+          i {
+            font-size: 1.5rem;
+            width: 30px;
+            text-align: center;
+          }
+
+          .nav-text {
+            display: none;
+          }
+
+          &:hover {
+            background: linear-gradient(90deg, #4B5EAA, #38B2AC);
+            color: #fff;
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+
+    .submenu {
+      list-style: none;
+      padding: 0;
+
+      .sub-link {
+        color: #666;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.9rem;
+        padding: 8px 15px;
+        display: block;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: #4B5EAA;
+          background: #F7FAFC;
+          border-radius: 8px;
+        }
+      }
+    }
+
+    &.expanded {
+      .sidebar-nav .nav-item .nav-link .nav-text {
+        display: inline;
+      }
+    }
+
+    .sidebar-footer {
+      list-style: none;
+      padding: 0;
+      margin-top: auto;
+
+      .nav-link {
+        color: #333;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 1rem;
+        padding: 12px 15px;
+        transition: all 0.3s ease;
+
+        i {
+          font-size: 1.5rem;
+          width: 30px;
+          text-align: center;
+        }
+
+        .nav-text {
+          display: none;
+        }
+
+        &:hover {
+          background: linear-gradient(90deg, #4B5EAA, #38B2AC);
+          color: #fff;
+          border-radius: 8px;
+        }
+      }
+
+      &.expanded .nav-link .nav-text {
+        display: inline;
+      }
+    }
+  }
+}
+/* Color Palette */
+$primary-blue: #007BFF;
+$secondary-teal: #00C4B4;
+$gradient-start: #007BFF;
+$gradient-end: #00C4B4;
+$light-bg: #F7FAFC;
+$white: #fff;
+$gray-text: #666;
+$pending-orange: #FFA726;
+$rejected-red: #EF5350;
+$submitted-green: #00C853;
+
+/* Profile Header */
+.profile-header {
+  background: $white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+  h5 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: $primary-blue;
+  }
+
+  .text-muted {
+    font-size: 0.9rem;
+    color: $gray-text;
+  }
+   
+  }
+
+.scrolling-slogan {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: $secondary-teal;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.slogan-text {
+  background: linear-gradient(90deg, $gradient-start, $gradient-end);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Notice Card */
+.notice-card {
+  background: $white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border-left: 5px solid $primary-blue;
+
+  .notice-header {
+    background: linear-gradient(90deg, $gradient-start, $gradient-end);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+
+    i {
+      font-size: 1.5rem;
+    }
+  }
+
+  .notice-body {
+    p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      color: $gray-text;
+      line-height: 1.6;
+
+      strong {
+        color: $primary-blue;
+      }
+    }
+  }
+}
+
+/* Income Card */
+.income-card {
+  background: $white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, $gradient-start, $gradient-end);
+    color: $white;
+
+    .card-icon,
+    h6,
+    h4,
+    .status-bar span {
+      color: $white;
+    }
+  }
+
+  .card-icon {
+    font-size: 2rem;
+    background: linear-gradient(90deg, $gradient-start, $gradient-end);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+  }
+
+  h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: $gray-text;
+    margin-bottom: 10px;
+  }
+
+  h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: $primary-blue;
+    margin: 0;
+  }
+
+  .status-bar {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+
+    .pending {
+      color: $pending-orange;
+    }
+
+    .rejected {
+      color: $rejected-red;
+    }
+
+    .submitted {
+      color: $submitted-green;
+    }
+
+    .referrals,
+    .left,
+    .right {
+      color: $secondary-teal;
+    }
+  }
+}
+
+/* Referral Card */
+.referral-card {
+  background: $white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .premium-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: $primary-blue;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+
+  .input-group {
+    .form-control {
+      border-radius: 8px 0 0 8px;
+      font-size: 0.85rem;
+      color: $gray-text;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, $gradient-start, $gradient-end);
+      border: none;
+      border-radius: 0 8px 8px 0;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: linear-gradient(90deg, $gradient-end, $gradient-start);
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+
+    .scrolling-slogan {
+      margin-top: 10px;
+    }
+  }
+
+  .income-card {
+    padding: 15px;
+
+    h6 {
+      font-size: 0.85rem;
+    }
+
+    h4 {
+      font-size: 1.3rem;
+    }
+
+    .status-bar {
+      font-size: 0.7rem;
+    }
+  }
+
+  .sidebar {
+    width: 60px;
+    &.expanded {
+      width: 200px;
+    }
+  }
+
+  .main-content {
+    margin-left: 60px;
+
+    &.shifted {
+      margin-left: 200px;
+    }
+
+    .content-wrapper {
+      padding: 0 10px;
+    }
+  }
+}
